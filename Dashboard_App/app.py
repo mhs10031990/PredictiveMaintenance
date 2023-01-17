@@ -21,7 +21,7 @@ with st.sidebar:
     process_temp = st.slider('Process temperature [°C]', 25, 50, 38)
     rotation_rpm = st.slider('Rotational RPM', 1000, 3000, 1400)
     torque_nm = st.slider('Torque NM', 1, 90, 56)
-    tool_wear_min = st.slider('Tool Wear Minimum',0,260,233)
+    tool_wear_min = st.slider('Tool Wear Minimum',0,300,233)
     temp_diff =  process_temp - air_temp
     quality_type = st.radio('Quality Type',('Low','Medium','High'))
 
@@ -86,8 +86,9 @@ with tab2:
 
 with tab3:
     if check_prediction > 0:
-        st.text_input("Binary Model Input", payload)
-        st.text_input("Binary Model Input Type", type(payload))
+        #st.text_input("Binary Model Input", payload)
+        #st.text_input("Binary Model Input Type", type(payload))
+        st.subheader("Binary Model Input data")
         data_1 = pd.DataFrame.from_dict(payload)
         st.table(data_1)
         output1 = binary_model(payload)
@@ -96,8 +97,9 @@ with tab3:
         st.write("#")
         if output1 == "Failure":
             
-            st.text_input("Multi Model Input", payload_1)
-            st.text_input("Multi Model Input Type", type(payload_1))
+            #st.text_input("Multi Model Input", payload_1)
+            #st.text_input("Multi Model Input Type", type(payload_1))
+            st.subheader("Multi Model Input data")
             data_1 = pd.DataFrame.from_dict(payload_1)
             st.table(data_1)
             output2 = multi_model(payload_1)
