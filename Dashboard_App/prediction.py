@@ -20,7 +20,7 @@ def binary_model(payload):
 def multi_model(payload):
     
     headers={"Content-type":"application/json"} 
-    url = 'http://svc-837f7bd0-4e0d-4297-9eb8-601e62b35355:5001/predictivemaintenancemulticlassification/507ec252-be83-43ff-a235-152e09433d59/score'
+    url = 'http://svc-6a75e470-df22-407a-a890-cf47d079a6a9:5001/predictivemaintenancemulticlassification/d5f01615-1188-4152-867a-1ef4b1aff9c0/score'
     data={"payload":str(payload)}
     response_json = requests.post(url, json=data, headers=headers)
     #st.text_input("API Response: ",response_json.content)
