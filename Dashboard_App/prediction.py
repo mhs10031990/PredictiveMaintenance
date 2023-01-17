@@ -7,7 +7,7 @@ import json
 def binary_model(payload):
     
     headers={"Content-type":"application/json"}
-    url = 'http://svc-d11ca779-f674-41c6-bb52-9e5f12a99c91:5001/predictivemaintenancebinaryclassification/d95dd4be-44d5-4952-8e14-0a5dc251f403/score'
+    url = 'http://svc-79af3988-c6b2-4609-ad75-8e22f254cef4:5001/predictivemaintenancebinaryclassification/fcf85b95-4c9b-4575-bda3-c0796991f736/score'
     data={"payload" : str(payload)}
     response_json = requests.post(url, json=data, headers=headers)
     #st.text_input("API Response: ",response_json.content)
