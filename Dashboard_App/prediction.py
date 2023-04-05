@@ -10,7 +10,9 @@ def binary_model(payload):
 #     url = 'http://svc-1a0c7b69-afcc-4146-9444-9f19d15dee59-6fcd675fdc:5001/predictivemaintenancebinaryclassification/074e09f2-dec7-4179-829f-05bdfdbc798a/score'
     url = "https://refract.fosfor.com/predictivemaintenancebinaryclassification/074e09f2-dec7-4179-829f-05bdfdbc798a/score"
     data={"payload" : str(payload)}
+    return payload
     response_json = requests.post(url, json=data, headers=headers)
+    
     #st.text_input("API Response: ",response_json.content)
     response = response_json.json()
     try:
