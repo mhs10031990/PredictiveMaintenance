@@ -21,7 +21,7 @@ def binary_model(payload):
 def multi_model(payload):
     
     headers={"Content-type":"application/json"} 
-    url = 'http://svc-33df36f1-5b37-4b8b-995f-93562b2df15f:5001/predictivemaintenancemulticlassification/b6f10f20-e5b1-42f6-a9e2-de6a2a60b069/score'
+    url = 'http://svc-23cff8be-6a11-492a-a1d4-61c71e7b0bdc:5001/predictivemaintenancemulticlassification/f6da9f28-e4ea-4226-80fd-8a5e5685b733/score'
 #     url = 
 
     data={"payload":str(payload)}
