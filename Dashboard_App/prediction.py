@@ -9,15 +9,14 @@ def binary_model(payload):
     headers={"Content-type":"application/json"}
     url = 'http://svc-3beb86ee-32ca-4775-92bc-2a8a463e12d4:5001/predictivemaintenancebinaryclassification/ec2b1439-42f2-4c69-94e7-e52dd57c3e6c/score'
     data={"payload" : str(payload)}
-    return data
     response_json = requests.post(url, json=data, headers=headers)
     
     #st.text_input("API Response: ",response_json.content)
     response = response_json.json()
     try:
-        return response['upload_logging_data']['response_data']
+        return response['data']
     except ValueError:
-        return response.status_code 
+        return response_json.status_code 
 
 def multi_model(payload):
     
@@ -30,6 +29,6 @@ def multi_model(payload):
     #st.text_input("API Response: ",response_json.content)
     response = response_json.json()
     try:
-        return response['upload_logging_data']['response_data']
+        return response['data']
     except ValueError:
-        return response.status_code
+        return response_json.status_code
